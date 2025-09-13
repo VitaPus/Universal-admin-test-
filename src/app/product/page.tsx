@@ -17,21 +17,24 @@ export default function ProductsPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Загрузка данных
-    fetch('/data/products.json')
-      .then(res => res.json())
-      .then(data => {
-        setData('products', data);
-        setIsLoading(false);
-      });
-  }, [setData]);
+  setIsLoading(true);
+
+  fetch('/api/products')
+    .then(res => {
+      if (!res.ok) throw new Error('Failed to fetch products');
+      return res.json();
+    })
+    .then(data => setData('products', data))
+    .catch(err => console.error(err))
+    .finally(() => setIsLoading(false));
+}, [setData]);
 
   const filteredData = applyFilters(products.data, products.filters, productFilters);
 
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-6">
       <h1 className="text-2xl font-bold mb-4">Products</h1>
       
       <FiltersBar
