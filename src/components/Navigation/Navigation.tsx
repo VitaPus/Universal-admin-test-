@@ -15,8 +15,8 @@ export default function Navigation() {
   ];
 
   return (
-    <nav className="bg-gray-800 text-white p-4">
-      <div className="container mx-auto flex space-x-4">
+    <nav className="bg-gray-900 text-white p-4">
+      <div className="container mx-auto flex space-x-4 gap-4">
         {navItems.map((item) => (
           <Link
             key={item.href}
