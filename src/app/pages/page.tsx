@@ -16,7 +16,7 @@ export default function PagesPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/pages.json')
+    fetch('/api/pages.json')
       .then(res => res.json())
       .then(data => {
         setData('pages', data);

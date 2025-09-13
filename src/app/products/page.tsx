@@ -18,20 +18,10 @@ export default function ProductsPage() {
 
   useEffect(() => {
     // Загрузка данных
-    fetch('/data/products.json')
+    fetch('/api/products.json')
       .then(res => res.json())
       .then(data => {
         setData('products', data);
-        setIsLoading(false);
-      });
-  }, [setData]);
-
-  useEffect(() => {
-    // Загрузка данных из pages.json
-    fetch('/data/pages.json')
-      .then(res => res.json())
-      .then(data => {
-        setData('pages', data);
         setIsLoading(false);
       });
   }, [setData]);

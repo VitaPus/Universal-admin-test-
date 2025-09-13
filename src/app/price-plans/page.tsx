@@ -16,7 +16,7 @@ export default function PricePlansPage() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/data/price-plans.json')
+    fetch('/api/price-plans.json')
       .then(res => res.json())
       .then(data => {
         setData('pricePlans', data);
