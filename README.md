@@ -1,1 +1,1 @@
-[https://universal-admin-test.vercel.app/pages]{Link}
+(https://universal-admin-test.vercel.app/pages)[Link]
