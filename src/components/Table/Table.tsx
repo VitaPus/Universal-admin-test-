@@ -55,13 +55,13 @@ function TableComponent<T extends Record<string, unknown>>({
 
   return (
     <div className="overflow-x-auto">
-      <table className="min-w-full border-collapse border border-gray-300">
+      <table className="min-w-full border-collapse border border-green-300">
         <thead>
           <tr>
             {columns.map((col) => (
               <th
                 key={col.key}
-                className={`border border-gray-300 px-4 py-2 ${
+                className={`border border-gray-300 px-10 py-2 ${
                   col.sortable
                     ? "cursor-pointer hover:bg-gray-100 transition-colors"
                     : ""
@@ -113,20 +113,20 @@ function TableComponent<T extends Record<string, unknown>>({
                   <div className="flex space-x-2">
                     {onEdit && (
                       <button
-                        className="text-blue-600 hover:text-blue-800 transition-colors"
+                        className="text-blue-600 hover:text-blue-800 transition-colors border rounded-md p-1 bg-blue-50"
                         onClick={() => onEdit(row)}
                         aria-label={`Edit ${getPath(row, "id") || "item"}`}
                       >
-                        Edit
+                        EDIT
                       </button>
                     )}
                     {onDelete && (
                       <button
-                        className="text-red-600 hover:text-red-800 transition-colors"
+                        className="text-red-600 hover:text-red-800 transition-colors border rounded-md p-1 bg-red-50"
                         onClick={() => onDelete(row)}
                         aria-label={`Delete ${getPath(row, "id") || "item"}`}
                       >
-                        Delete
+                        DELETE
                       </button>
                     )}
                   </div>

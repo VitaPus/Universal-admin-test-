@@ -8,6 +8,9 @@ export default function HomePage() {
       <p className="text-lg">
         Выберите раздел в меню: <strong>Products</strong>, <strong>Price Plans</strong> или <strong>Pages</strong>.
       </p>
+        <div className="bg-blue-500 text-white p-10 rounded-lg">
+        Tailwind работает 🎉
+        </div>
     </div>
   );
 }

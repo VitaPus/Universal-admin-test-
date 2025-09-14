@@ -1,26 +1,12 @@
-// app/layout.tsx
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Navigation from "@/components/Navigation/Navigation";
+import './globals.css';
+import Navigation from '@/components/Navigation/Navigation';
 
-const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Data Management UI",
-  description: "Test task for data management interface",
-};
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-100">
         <Navigation />
-        <main className="p-4">{children}</main>
+        <main className="p-6 sm:p-10">{children}</main>
       </body>
     </html>
   );
